@@ -52,6 +52,7 @@ const RotaPrivadaAdmin = ({component : Component, ...rest}) => (
   />
 );
 
+//Tratamento para professor
 const RotaPrivadaProfessor = ({component : Component, ...rest}) => (
   <Route
     {...rest}
