@@ -1,0 +1,11 @@
+html,
+.caroussel-height {
+  height: 500px;
+}
+.text-black {
+    color: black;
+    text-shadow: black;
+}
+.jumbotron-color {
+    background-color: #007BFF !important;
+}
