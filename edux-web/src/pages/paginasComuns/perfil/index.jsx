@@ -3,7 +3,6 @@ import Menu from '../../../components/menu';
 import Rodape from '../../../components/rodape';
 import jwt_decode from 'jwt-decode';
 import './index.css';
-import { Col, Container, Row } from 'react-bootstrap';
 
 const Perfil = () => {
 
