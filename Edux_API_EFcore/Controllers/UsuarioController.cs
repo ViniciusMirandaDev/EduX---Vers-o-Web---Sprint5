@@ -121,6 +121,9 @@ namespace Edux_Api_EFcore.Controllers
         {
             try
             {
+                usuario.DataCadastro = DateTime.Now;
+                usuario.DataUltimoAcesso = DateTime.Now;
+
                 _usuarioRepository.Adicionar(usuario);
 
                 return Ok(usuario);

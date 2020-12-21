@@ -100,6 +100,8 @@ namespace Edux_Api_EFcore.Repositories
                 usuarioTemp.Nome = u.Nome;
                 usuarioTemp.Email = u.Email;
                 usuarioTemp.Senha = u.Senha;
+                //Essa condição é usada para diferenciar um editar comum de um editar na hora do login
+                usuarioTemp.DataUltimoAcesso = u.DataUltimoAcesso == null ? usuarioTemp.DataUltimoAcesso : u.DataUltimoAcesso;
 
                 _ctx.Usuarios.Update(usuarioTemp);
                 _ctx.SaveChanges();

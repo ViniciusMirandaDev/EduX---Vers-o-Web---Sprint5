@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Edux_Api_EFcore.Contexts;
 using Edux_Api_EFcore.Domains;
+using Edux_Api_EFcore.Repositories;
 using Edux_Api_EFcore.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +23,8 @@ namespace Edux_Api_EFcore.Controllers
    public class LoginController : ControllerBase
    {
        EduxContext _ctx = new EduxContext();
+
+        UsuarioRepository _userRepo = new UsuarioRepository();
 
        private IConfiguration _config;
 
@@ -78,9 +81,13 @@ namespace Edux_Api_EFcore.Controllers
            IActionResult response = Unauthorized();
 
            var user = AutenticarUsuario(login);
-
+           
            if (user != null)
            {
+                user.DataUltimoAcesso = DateTime.Now;
+
+                _userRepo.Editar(user.Id, user);
+
                var tokenString = GerarJWT(user);
                response = Ok(new { token = tokenString });
            }

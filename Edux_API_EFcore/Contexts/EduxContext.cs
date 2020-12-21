@@ -1,6 +1,4 @@
-﻿//DANIEL
-
-using Edux_Api_EFcore.Domains;
+﻿using Edux_Api_EFcore.Domains;
 using Microsoft.EntityFrameworkCore;
 
 namespace Edux_Api_EFcore.Contexts
@@ -24,7 +22,7 @@ namespace Edux_Api_EFcore.Contexts
         {
             if (!optionBuilder.IsConfigured)
             {
-                optionBuilder.UseSqlServer(@"Data Source=desktop-h1nfq8t\SQLEXPRESS;Initial Catalog=edux;User ID=sa;Password=sa132");
+                optionBuilder.UseSqlServer("Data Source=.\\SqlExpress; Initial Catalog= Edux; Trusted_Connection=True; user id= sa; password= sa132");
                 base.OnConfiguring(optionBuilder);
             }
         }
