@@ -16,7 +16,7 @@ const Login = () => {
     const logar = (event) => {
         event.preventDefault();
 
-        fetch('http://localhost:49932/api/Login',{
+        fetch('http://localhost:5000/api/Login',{
             method : 'POST',
             body : JSON.stringify({
                 email : email,

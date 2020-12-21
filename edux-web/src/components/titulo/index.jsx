@@ -3,7 +3,7 @@ import {Jumbotron} from 'react-bootstrap';
 
 const Titulo = ({titulo, chamada}) => {
     return (
-        <Jumbotron>
+        <Jumbotron style={{backgroundColor:'#007BFF'}}>
             <h1>{titulo}</h1>
             <p>
                 {chamada}
