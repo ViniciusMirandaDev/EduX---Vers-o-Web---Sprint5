@@ -7,7 +7,7 @@ const TurmaAdmin = () => {
 
     
     
-        const [turmas, setTurmas] = useState([]);
+    const [turmas, setTurmas] = useState([]);
 
 
     useEffect(() => {
